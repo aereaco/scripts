@@ -5,10 +5,6 @@ sudo apt -y upgrade
 sudo apt -y install podman pip cockpit cockpit-podman network-manager snapd
 sudo pip install podman-compose
 
-sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
-sudo swapoff -a
-sudo free -m
-
 sudo systemctl enable --now NetworkManager
 sudo systemctl enable --now podman.socket
 sudo systemctl enable --now cockpit.socket
